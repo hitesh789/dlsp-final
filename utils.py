@@ -37,7 +37,7 @@ def get_data(percentage_labelled, percentage_unlabelled, batch_size=32):
          transforms.RandomVerticalFlip(p=0.5)
          ])
 
-    trainset = torchvision.datasets.CIFAR10(root='./data', train=True,
+    trainset = torchvision.datasets.MNIST(root='./data', train=True,
                                             download=True, transform=transform)
     all_labelled_datasets = []
     all_unlabelled_datasets = []
@@ -68,7 +68,7 @@ def get_data(percentage_labelled, percentage_unlabelled, batch_size=32):
     # subset = torch.utils.data.Subset(trainset, unlabelled_indices)
     # unlabelled_trainloader = torch.utils.data.DataLoader(subset, batch_size=1, num_workers=0, shuffle=False)
 
-    testset = torchvision.datasets.CIFAR10(root='./data', train=False,
+    testset = torchvision.datasets.MNIST(root='./data', train=False,
                                            download=True, transform=transform)
     testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
                                              shuffle=False, num_workers=2)
