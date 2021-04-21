@@ -13,7 +13,7 @@ import time
 import json
 from utils import *
 
-classes = ('T-Shirt','Trouser','Pullover','Dress','Coat','Sandal','Shirt','Sneaker','Bag','Ankle Boot')
+classes = (0,1,2,3,4,5,6,7,8,9)
 
 
 def baseline_wrapper(finetuner_model, num_epochs, labelled_trainloader, testloader, optimizer, criterion, folder_name):
