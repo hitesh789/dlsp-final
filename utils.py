@@ -38,7 +38,7 @@ def get_data(percentage_labelled, percentage_unlabelled, batch_size=32):
                                             download=True, transform=transform)
     all_labelled_datasets = []
     all_unlabelled_datasets = []
-    for each_target in set(trainset.targets):
+    for each_target in set(trainset.targets.numpy()):
         tmp_trainset_indices = [i for i, each in enumerate(trainset.targets) if each == each_target]
         # tmp_trainset_indices = (trainset.targets == each_target)
         # tmp_trainset_indices = [idx for idx, val in tmp_trainset_indices if idx == True]
